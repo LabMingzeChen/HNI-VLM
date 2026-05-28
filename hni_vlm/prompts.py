@@ -141,15 +141,14 @@ PROMPT_PHOTOGRAPHER_ENGAGEMENT = r"""
 You are given ONE image. Classify the PHOTOGRAPHER engagement type.
 
 Output EXACTLY one of:
-- "documented" : a person inside the image is visibly photographing /
-                 filming a natural element (holding a camera / phone
-                 toward nature).
-- "implied"    : the photographer is not visible inside the frame, but the
-                 composition (centered landscape, framed wildlife close-up,
-                 deliberate aesthetic framing toward nature) shows the
-                 image-maker is paying intentional attention to nature.
+- "documented" : at least one person is visible anywhere in the image
+                 (any human presence counts, regardless of whether they
+                 are holding a camera).
+- "implied"    : no person is visible in the image; the photo depicts
+                 only natural elements (landscape, wildlife, plants).
 
-If neither applies clearly, prefer "implied".
+This follows the operational rule used in the dissertation's annotation
+protocol: presence of any human subject = documented; pure nature scene = implied.
 
 Output ONE word only: documented or implied.
 """.strip()
@@ -193,10 +192,10 @@ C) activity_intensity
    - NA        : no people visible.
 
 D) photographer_engagement
-   - documented : a person in the image is visibly photographing or
-                  filming a natural element.
-   - implied    : photographer not in frame, but composition shows
-                  intentional aesthetic attention toward nature.
+   - documented : at least one person is visible in the image
+                  (any human presence counts).
+   - implied    : no person is visible; the image shows only natural
+                  elements (landscape, wildlife, plants).
 
 Conservative tie-breaks:
    - subject vs setting  -> setting
