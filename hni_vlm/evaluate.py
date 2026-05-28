@@ -28,17 +28,23 @@ from typing import Dict, List, Optional, Tuple
 
 import pandas as pd
 
-try:
-    from sklearn.metrics import (
-        accuracy_score,
-        precision_recall_fscore_support,
-        confusion_matrix,
-    )
-except ImportError as exc:                                  # pragma: no cover
-    raise ImportError(
-        "hni_vlm.evaluate needs scikit-learn.\n"
-        "    pip install scikit-learn"
-    ) from exc
+def _require_sklearn():
+    """Import sklearn lazily so the package can load without it."""
+    try:
+        from sklearn.metrics import (
+            accuracy_score,
+            precision_recall_fscore_support,
+            confusion_matrix,
+        )
+        return accuracy_score, precision_recall_fscore_support, confusion_matrix
+    except ImportError as exc:
+        raise ImportError(
+            "hni_vlm.evaluate needs scikit-learn.\n"
+            "    pip install scikit-learn"
+        ) from exc
+
+
+accuracy_score = precision_recall_fscore_support = confusion_matrix = None
 
 
 # Task definitions: (task_name, pred_col, true_col, label_order)
@@ -72,11 +78,15 @@ def _normalize(x: object) -> Optional[str]:
 
 
 def _task_metrics(
+    # sklearn is loaded lazily; see _require_sklearn
     y_true: pd.Series,
     y_pred: pd.Series,
     label_order: List[str],
 ) -> Dict[str, object]:
     """Compute accuracy + macro P/R/F1 + confusion matrix for one task."""
+    global accuracy_score, precision_recall_fscore_support, confusion_matrix
+    if accuracy_score is None:
+        accuracy_score, precision_recall_fscore_support, confusion_matrix = _require_sklearn()
     mask = y_true.notna() & y_pred.notna()
     y_t, y_p = y_true[mask].tolist(), y_pred[mask].tolist()
 
