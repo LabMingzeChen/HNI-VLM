@@ -1,0 +1,69 @@
+[build-system]
+requires      = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+# ---------------------------------------------------------------------
+[project]
+name            = "hni-vlm"
+version         = "0.1.0"
+description     = "Vision-language toolkit for Human-Nature Interaction classification."
+readme          = "README.md"
+license         = { text = "MIT" }
+requires-python = ">=3.9"
+authors         = [{ name = "Mingze Chen" }]
+keywords        = [
+    "vision-language model",
+    "human-nature interaction",
+    "urban planning",
+    "computer vision",
+    "VLM",
+    "Qwen",
+    "image classification",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Image Recognition",
+]
+dependencies = [
+    "Pillow>=9.0",
+    "requests>=2.28",
+    "openai>=1.0",
+    "pandas>=1.5",
+    "tqdm>=4.60",
+]
+
+[project.optional-dependencies]
+eval = ["scikit-learn>=1.0"]
+dev  = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "black>=23.0",
+    "ruff>=0.1.0",
+]
+all  = ["scikit-learn>=1.0", "pytest>=7.0", "black", "ruff"]
+
+[project.urls]
+Homepage      = "https://github.com/YOUR_USERNAME/HNI-VLM"
+Documentation = "https://github.com/YOUR_USERNAME/HNI-VLM/tree/main/docs"
+Repository    = "https://github.com/YOUR_USERNAME/HNI-VLM"
+Issues        = "https://github.com/YOUR_USERNAME/HNI-VLM/issues"
+
+# ---------------------------------------------------------------------
+[tool.setuptools.packages.find]
+include = ["hni_vlm*"]
+
+[tool.setuptools.package-data]
+hni_vlm = ["py.typed"]
+
+# ---------------------------------------------------------------------
+[tool.ruff]
+line-length = 100
+target-version = "py39"
