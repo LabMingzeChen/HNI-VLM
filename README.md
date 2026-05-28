@@ -7,10 +7,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.9+](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/)
-[![PyPI version](https://img.shields.io/badge/pypi-v0.1.0-brightgreen.svg)](https://pypi.org/project/hni-vlm/)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YOUR_USERNAME/HNI-VLM/blob/main/examples/01_quickstart.ipynb)
-[![HuggingFace Space](https://img.shields.io/badge/🤗-Demo-orange.svg)](https://huggingface.co/spaces/YOUR_USERNAME/HNI-VLM)
-[![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/LabMingzeChen/HNI-VLM/blob/main/examples/01_quickstart.ipynb)
+[![HuggingFace Space](https://img.shields.io/badge/🤗-Demo-orange.svg)](https://huggingface.co/spaces/Mingze/HNI-VLM)
 
 **Move beyond activity recognition. Understand *how* people relate to nature in images.**
 
@@ -150,8 +148,8 @@ Inter-annotator agreement (Cohen's κ) on the gold dataset: `primary=0.853`, `en
 
 Try it in your browser — no install needed:
 
-- 🤗 **[Hugging Face Space](https://huggingface.co/spaces/YOUR_USERNAME/HNI-VLM)** — upload an image, get all four labels.
-- 📓 **[Colab Notebook](https://colab.research.google.com/github/YOUR_USERNAME/HNI-VLM/blob/main/examples/01_quickstart.ipynb)** — full pipeline in 30 seconds.
+- 🤗 **[Hugging Face Space](https://huggingface.co/spaces/Mingze/HNI-VLM)** — upload an image, get all four labels.
+- 📓 **[Colab Notebook](https://colab.research.google.com/github/LabMingzeChen/HNI-VLM/blob/main/examples/01_quickstart.ipynb)** — full pipeline in 30 seconds.
 
 ---
 
@@ -223,7 +221,7 @@ If you use HNI-VLM in your research, please cite:
   title  = {Vision-Language Models for Human-Nature Interaction in Urban Environments},
   author = {Chen, Mingze},
   year   = {2026},
-  school = {Massachusetts Institute of Technology}
+  school = {University of British Columbia}
 }
 ```
 
