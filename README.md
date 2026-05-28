@@ -249,7 +249,7 @@ Released under the [MIT License](LICENSE). Commercial use, modification, and red
 
 ## 🙏 Acknowledgements
 
-This work was conducted as part of Mingze Chen's PhD at MIT, supervised by Dr. Keunhyun Park. We thank the Flickr open-data community and the two human annotators who produced the 495-image gold-standard dataset.
+This work was conducted as part of Mingze Chen's PhD at UBC, supervised by Dr. Keunhyun Park. We thank the Flickr open-data community and the two human annotators who produced the 495-image gold-standard dataset.
 
 ---
 
